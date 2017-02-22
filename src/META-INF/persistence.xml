@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="jpa-sample">
-	</persistence-unit>
+	<persistence-unit name="jpa-sample01">
+	
+		<!-- 配置什么产品作为	jpa的实现 
+			如果只有一个jpa的实现，则可以省略
+		-->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!-- 添加持久化类 -->
+		<class>com.lw.jpa.helloword.Customer</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql:///jpa"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="root"/>
+			<!-- 配置jpa实现产品的基本属性 -->
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+		</properties>
+		</persistence-unit>
 </persistence>
