@@ -143,6 +143,7 @@ public class JPATest {
 	
 	// 相当于session的save方法
 	// 注意：jpa的persist方法保存的对象不能设置id，否则报错
+	// 二hibernate可以保存有id的
 	@Test
 	public void testPersistence(){
 		Customer customer = new Customer() ;
